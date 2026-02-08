@@ -2,25 +2,182 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #273036;
+  --color-mibackground: rgb(14 165 233); /* Definir aquí también para consistencia */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-text: var(--foreground); /* Añadir esta línea para textos */
+  
+  --font-sans: var(--font-poppins);
   --font-mono: var(--font-geist-mono);
+  --font-poppins: var(--font-poppins);
+  --font-geist-sans: var(--font-geist-sans);
+  --font-geist-mono: var(--font-geist-mono);
+  
+  /* Opcional: Puedes sobrescribir colores base de Tailwind */
+  --color-gray-600: var(--foreground);
+  --color-gray-700: var(--foreground);
+  --color-gray-800: var(--foreground);
+  --color-gray-900: var(--foreground);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ededed;
+    --foreground: #273036;
+    --color-mibackground: rgb(14 165 233);
   }
+}
+
+/* Asegurar que todos los elementos hereden el color */
+*,
+*::before,
+*::after {
+  color: inherit;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+
+}
+
+/* Reset para enlaces si es necesario */
+a {
+  color: var(--foreground);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+@layer utilities {
+  .bg-custom {
+    background-color: var(--color-mibackground);
+  }
+  
+  /* Clase para forzar el color foreground si es necesario */
+  .text-foreground {
+    color: var(--foreground) !important;
+  }
+  
+  /* Reset para textos que podrían tener colores específicos */
+  .text-inherit {
+    color: inherit;
+  }
+
+  /* Clases utilitarias para cambiar fuentes */
+  .font-poppins {
+    font-family: var(--font-poppins), sans-serif;
+  }
+  
+  .font-geist-sans {
+    font-family: var(--font-geist-sans), sans-serif;
+  }
+  
+  .font-geist-mono {
+    font-family: var(--font-geist-mono), monospace;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+        max-width: 1024px;
+    }
+}
+
+  /* Animaciones de onda */
+  @keyframes wave-1 {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1400px;
+    }
+  }
+
+  @keyframes wave-2 {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
+  }
+
+  @keyframes wave-3 {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1400px;
+    }
+  }
+
+  @keyframes wave-4 {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-25px);
+    }
+  }
+
+  .animate-wave-1 {
+    animation: wave-1 7s linear infinite;
+  }
+
+  .animate-wave-2 {
+    animation: wave-2 7s linear infinite, wave-2 7s ease-in-out infinite;
+  }
+
+/*   .animate-wave-3 {
+    animation: wave-3 7s linear infinite;
+  }
+
+  .animate-wave-4 {
+    animation: wave-4 7s linear infinite, wave-4 9s ease-in-out infinite;
+  } */
+
+  
+
+  @keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+}
+
+
+
+/* Sobrescribir posibles clases de Tailwind que puedan interferir */
+@layer base {
+  h1, h2, h3, h4, h5, h6, p, span, div {
+    color: var(--foreground);
+  }
+  
+  /* Si usas alguna clase específica de Tailwind para texto, resetea su color */
+  .text-gray-600,
+  .text-gray-700,
+  .text-gray-800,
+  .text-gray-900,
+  .text-black,
+  .text-slate-800,
+  .text-slate-900 {
+    color: var(--foreground) !important;
+  }
 }

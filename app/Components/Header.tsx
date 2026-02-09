@@ -28,7 +28,7 @@ function Header() {
   return (
     <>
       <header className="bg-custom p-3 sticky top-0 z-50">
-        <div className="container mx-auto flex items-center justify-evenly">
+        <div className="container mx-auto flex items-center justify-between">
           <div>
             <Link href="/" className="flex items-center space-x-3">
               <div className="h-10 w-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">

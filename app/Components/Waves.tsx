@@ -3,7 +3,7 @@ import React from 'react'
 
 function Waves() {
   return (
-    <section className=''>
+    <section className='relative'>
       <div className="bottom-0 left-0 right-0 h-[180px] overflow-hidden">
         <div className="absolute inset-0" style={{clipPath: 'inset(0 0 0 0)'}}>
           {/* Onda 1 - Más lenta y profunda */}

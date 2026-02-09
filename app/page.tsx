@@ -10,7 +10,7 @@ import Footer from "./Components/Footer"
 
 export default function Page() { 
   return (
-    <div className="h-full flex flex-col overflow-x-hidden">
+    <div className="h-full flex flex-col overflow-hidden">
       <Header/>
       <HomeComponent/> 
       <Waves/>

@@ -10,24 +10,19 @@ function Header() {
   const pathname = usePathname();
 
   const navItems = [
-    { name: "Inicio", path: "/" },
-    { name: "Nosotros", path: "/about" },
-    { name: "Servicios", path: "/services" },
-    { name: "Portafolio", path: "/portfolio" },
-    { name: "Contacto", path: "/contact" },
+    { name: "Home", path: "#home" },
+    { name: "About", path: "#about" },
+    { name: "Services", path: "#services" },
+    { name: "Portfolio", path: "#portfolio" },
+    { name: "FAQ", path: "#faq" },
+    { name: "Contact", path: "#contact" },
   ];
 
-  // Función para verificar si una ruta está activa
-  const isActive = (path: string) => {
-    if (path === "/") {
-      return pathname === path;
-    }
-    return pathname.startsWith(path);
-  };
+  // Eliminamos la función isActive ya que ahora usaremos scroll de anclas
 
   return (
     <>
-      <header className="bg-custom p-3 sticky top-0 z-50">
+      <header className="bg-custom p-3 sticky top-0 z-[100] w-full shadow-lg transition-all duration-300">
         <div className="container mx-auto flex items-center justify-between">
           <div>
             <Link href="/" className="flex items-center space-x-3">
@@ -46,26 +41,14 @@ function Header() {
                   href={item.path}
                   className={`
                   relative
-                  px-2 py-1 
-                  text-sm 
+                  px-3 py-1.5 
+                  text-sm font-medium
                   rounded-full 
                   transition-all duration-300
-                  flex items-center justify-center
-                  ${
-                    isActive(item.path)
-                      ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 shadow-lg text-sm"
-                      : "text-black hover:bg-black/5"
-                  }
+                  flex items-center justify-center text-gray-700 hover:text-black hover:bg-black/5 hover:shadow-sm
                 `}
                 >
                   {item.name}
-                  {/* Indicador adicional para ruta activa */}
-                  {isActive(item.path) && (
-                    <span
-                      className="absolute top-1 -right-1 w-3 h-3 bg-green-400 rounded-full border-2 border-white
-                  s"
-                    ></span>
-                  )}
                 </Link>
               ))}
 
@@ -173,28 +156,11 @@ function Header() {
                 relative
                 block 
                 px-4 py-4 
-                text-lg font-bold 
+                text-lg font-bold text-gray-900 hover:bg-gray-100
                 rounded-xl 
                 transition-all duration-300
-                ${
-                  isActive(item.path)
-                    ? "text-white bg-gradient-to-r from-blue-600 to-purple-600 pl-12"
-                    : "text-gray-900 hover:bg-gray-100"
-                }
               `}
             >
-              {/* Indicador de ruta activa */}
-              {isActive(item.path) && (
-                <span
-                  className="
-                  absolute left-4 top-1/2 -translate-y-1/2
-                  w-2 h-2 
-                  bg-white 
-                  rounded-full
-                  animate-pulse
-                "
-                ></span>
-              )}
               {item.name}
             </Link>
           ))}

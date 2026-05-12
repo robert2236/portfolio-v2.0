@@ -3,7 +3,7 @@ import React from "react";
 
 function HomeComponent() {
   return (
-    <div className="relative bg-custom min-h-[75vh] sm:min-h-[60vh]  overflow-hidden">
+    <div id="home" className="relative bg-custom min-h-[75vh] sm:min-h-[60vh]  overflow-hidden">
       <div className="container mx-auto h-full flex items-center py-4 md:py-0">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-20 justify-items-center w-full px-4 md:px-0">
           {/* Columna 1 */}

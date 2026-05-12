@@ -58,7 +58,7 @@ function FAQ() {
   };
 
   return (
-    <section className="container mx-auto px-2 py-36 sm:px-4">
+    <section id="faq" className="container mx-auto px-2 py-36 sm:px-4">
       <h1 className="text-center text-2xl font-bold uppercase">FAQ</h1>
       <p className="mb-16 text-center font-light">
         Frequently Asked Questions, Get Knowledge Before Hand

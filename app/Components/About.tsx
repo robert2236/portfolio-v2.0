@@ -14,7 +14,7 @@ function About() {
   ];
 
    return (
-       <section className="container mx-auto overflow-hidden px-2 sm:px-4 mt-20">
+       <section id="about" className="container mx-auto overflow-hidden px-2 sm:px-4 mt-20">
       {/* Grid de 12 columnas para proporción 6-3-3 */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-20">
         
@@ -22,10 +22,7 @@ function About() {
         <div className="lg:col-span-6 text-center lg:text-start">
           <h1 className="mb-5 text-2xl font-bold uppercase">ABOUT ME</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem
-            odit necessitatibus, aut amet facilis laboriosam impedit dolorem
-            placeat, sapiente vel, quas cupiditate quod inventore quibusdam
-            nulla pariatur officia. Magni, esse?
+            I am a Fullstack Developer with a passion for building robust web applications and a deep interest in Artificial Intelligence and Cybersecurity. My approach combines the efficiency of modern frameworks like React and FastAPI with the analytical power of Machine Learning. I don't just build features; I focus on creating scalable, intelligent, and secure digital products that solve real-world problems. Whether I'm training a model or securing a backend, I strive for excellence and continuous learning.
           </p>
         </div>
         

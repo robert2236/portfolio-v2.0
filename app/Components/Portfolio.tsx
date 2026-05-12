@@ -12,15 +12,15 @@ function Portfolio() {
 
   // Datos de ejemplo para los proyectos
   const projects = [
-    {
-      id: 1,
-      title: "E-commerce Template",
-      description: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores id doloremque ut voluptatum, saepe iste ad cum consequuntur.",
-      image: "./img/porfolio/project1.png",
-      demoLink: "#",
-      repoLink: "#",
-      category: "mix-personal"
-    },
+  {
+  id: 1,
+  title: "Exotic Birds",
+  description: "A modern UX redesign that transforms a rigid, boxy template into an organic digital experience. Using React and Canvas animations, I 'breathed life' into the interface with fluid interactions and dynamic visual storytelling.",
+  image: "./img/porfolio/project1.png",
+  demoLink: "https://exoticbird.netlify.app/",
+  repoLink: "https://github.com/RobertoCuberos/exoticbird2236",
+  category: "mix-personal"
+},
     {
       id: 2,
       title: "Landing Page Template",
@@ -61,16 +61,27 @@ function Portfolio() {
         {projects.map((project) => (
           <div 
             key={project.id}
-            className={`mix ${project.category} group col-span-12 flex h-[440px] flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] md:col-span-6 lg:col-span-4`}
+            className={`mix ${project.category} group col-span-12 flex h-full min-h-[440px] flex-col overflow-hidden rounded-2xl bg-white shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] md:col-span-6 lg:col-span-4`}
             style={{ opacity: 1, transform: 'none' }}
           >
             <figure className="h-full flex flex-col relative">
-              <div className="relative h-[200px] w-full overflow-hidden bg-gray-50 border-b border-gray-100">
-                <img 
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                  src={project.image} 
-                  alt={project.title} 
-                />
+              <div className="relative h-[200px] w-full overflow-hidden bg-gray-50 border-b border-gray-100 group">
+                {project.demoLink && project.demoLink !== "#" && project.demoLink.startsWith("http") ? (
+                  <div className="h-full w-full relative overflow-hidden">
+                    <iframe 
+                      src={project.demoLink} 
+                      className="absolute top-0 left-0 w-[400%] h-[400%] scale-[0.25] origin-top-left border-0 pointer-events-none transition-transform duration-700 group-hover:scale-[0.27]"
+                      title={project.title}
+                      scrolling="no"
+                    />
+                  </div>
+                ) : (
+                  <img 
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                    src={project.image} 
+                    alt={project.title} 
+                  />
+                )}
                 <div className="absolute inset-0 bg-black/5 transition-colors duration-300 group-hover:bg-transparent z-10 pointer-events-none"></div>
               </div>
               
@@ -78,7 +89,7 @@ function Portfolio() {
                 <figcaption className="mb-2 text-xl font-bold text-gray-800 transition-colors group-hover:text-primary-500">
                   {project.title}
                 </figcaption>
-                <figcaption className="line-clamp-3 text-sm text-gray-500">
+                <figcaption className="text-sm text-gray-500 pb-4">
                   {project.description}
                 </figcaption>
               </div>

@@ -66,7 +66,7 @@ function HomeComponent() {
 
               <div className="flex flex-col md:flex-row md:items-center gap-2 mt-6 justify-center md:justify-start">
                 <span className="text-xl md:text-2xl font-medium text-[#d4e157] opacity-80 min-h-[40px]">
-                  <TypewriterText text="Developer & Designer" delay={4500} speed={80} />
+                  <TypewriterText text="Frontend Developer | React, Next.js & Python (FastAPI) | UI/UX & Web Security Enthusiast" delay={4500} speed={80} />
                 </span>
               </div>
             </div>

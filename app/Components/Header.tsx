@@ -124,7 +124,7 @@ function Header() {
       `}
       >
         {/* Encabezado */}
-        <div className="p-6 border-b border-gray-200">
+        <div className="p-6">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="h-12 w-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
@@ -166,7 +166,7 @@ function Header() {
           ))}
 
           {/* Icono de GitHub en el menú móvil */}
-          <div className="mt-6 pt-4 border-t border-gray-200">
+          <div className="mt-6 pt-4">
             <a
               href="https://github.com"
               target="_blank"

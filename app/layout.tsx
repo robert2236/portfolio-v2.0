@@ -33,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`scroll-smooth ${poppins.variable} ${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`scroll-smooth overflow-x-hidden ${poppins.variable} ${geistSans.variable} ${geistMono.variable}`}>
       <body className="font-poppins antialiased"> {/* Usar Poppins por defecto */}
         {children}
       </body>

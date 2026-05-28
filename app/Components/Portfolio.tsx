@@ -65,7 +65,7 @@ function Portfolio() {
             style={{ opacity: 1, transform: 'none' }}
           >
             <figure className="h-full flex flex-col relative">
-              <div className="relative h-[200px] w-full overflow-hidden bg-gray-50 border-b border-gray-100 group">
+              <div className="relative h-[200px] w-full overflow-hidden bg-gray-50 group">
                 {project.demoLink && project.demoLink !== "#" && project.demoLink.startsWith("http") ? (
                   <div className="h-full w-full relative overflow-hidden">
                     <iframe 

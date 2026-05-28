@@ -54,9 +54,9 @@ function Contact() {
   };
 
   return (
-    <section className="overflow-hidden" id="contact">
+    <section className="relative overflow-hidden" id="contact">
       <div 
-        className="left-0 h-[50px] w-[6000px] -scale-y-100 bg-contain bg-bottom"
+        className="absolute left-0 h-[50px] w-[6000px] -scale-y-100 bg-contain bg-bottom"
         style={{ backgroundImage: "url('/wave2.svg')" }}
       ></div>
       

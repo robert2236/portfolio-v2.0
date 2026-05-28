@@ -118,7 +118,7 @@ function Skills() {
             </div>
 
             {/* SECCIÓN SERVICIOS CON REACT-ICONS */}
-            <div className="mt-32 grid grid-cols-12 gap-8 text-white border-t border-white/10 pt-20">
+            <div className="mt-32 grid grid-cols-12 gap-8 text-white pt-20">
               {servicios.map((servicio, index) => (
                 <div key={index} className="col-span-12 md:col-span-4 flex gap-6 text-left">
                   <div className="flex-shrink-0 mt-1">{servicio.icon}</div>
